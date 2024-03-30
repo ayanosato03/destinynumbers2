@@ -8,10 +8,15 @@
  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 
 <div class="index-main">
-  <div class="hero">
-  <%= image_tag 'ster', class: 'img-fluid my-img', alt: '...', width: '100%' %>
-  <h3>
-  数秘術<br>
+  <div class="hero my-img d-flex align-items-center justify-content-center text-center" style="background: url(<%= asset_path 'ster' %>) no-repeat center center; background-size: cover;">
+    <div>
+      <h1 class="text-white">destinynumbers</h1>
+    </div>
+  </div>
+   <div class="text-center">
+<%= render "shared/header" %>
+<h3 class="my-title">
+  数 秘 術 計 算<br>
   <small class="text-body-secondary">名前と生年月日を入力して下さい</small>
   </h3>
   </div>
