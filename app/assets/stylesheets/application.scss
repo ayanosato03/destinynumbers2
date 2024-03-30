@@ -1,0 +1,23 @@
+	
+@import "bootstrap";
+
+/******************************************************** 
+　トップページ 
+********************************************************/
+.index-main{
+  width: 100%;
+  height: 700px;
+}
+
+.hero {
+  font-family: "IM Fell French Canon SC", serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.my-img {
+  opacity: 60%;
+  height: 350px !important;
+  object-fit: cover;
+}

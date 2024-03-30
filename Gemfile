@@ -74,3 +74,6 @@ end
 group :development do
   gem 'rubocop', require: false
 end
+gem 'bootstrap', '~> 5.2.3'
+gem 'jquery-rails'
+gem 'mini_racer'
