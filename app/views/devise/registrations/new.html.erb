@@ -1,0 +1,33 @@
+<div class="contents row vh-100">
+ <div class="container d-flex flex-column justify-content-center align-items-center">
+    <h2 class="text-center">Sign up</h2>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+      <div class="form-group">
+        <%= f.label :nickname, class: 'control-label' %> 
+        <%= f.text_field :nickname, autofocus: true, maxlength: "6", class: 'form-control input-short'  %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, class: 'control-label' %> 
+        <%= f.email_field :email, class: 'form-control input-short' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: 'control-label' %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control input-short' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, class: 'control-label' %> 
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control input-short' %>
+      </div>
+
+      <div class="actions text-center">
+        <%= f.submit "Sign up", class: 'btn btn-pink' %>
+      </div>
+  </div>
+</div>
+    <% end %>

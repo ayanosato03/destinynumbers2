@@ -16,7 +16,7 @@
 | ------------------ | ----------- | ----------- |
 | name               | string      | null: false |
 | birthday           | date        | null: false |
-| calculation_result | string      | null: false |
+| calculation_result | integer     | null: false |
 | user               | references  | null: false, foreign_key:true |
 
 ### Association

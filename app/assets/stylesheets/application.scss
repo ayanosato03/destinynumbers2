@@ -1,6 +1,31 @@
 	
 @import "bootstrap";
 
+
+/******************************************************** 
+　新規登録画面
+********************************************************/
+.contents.row {
+  min-height: 100vh;
+}
+
+
+.input-short {
+  max-width: 300px;
+ }
+
+ .btn-pink {
+  background-color: #ff69b4;
+  color: white;
+  border-color: #ff69b4;
+  margin-top: 20px;
+}
+.btn-pink:hover {
+  background-color: #ff1493;
+  color: white;
+  border-color: #ff1493;
+}
+
 /******************************************************** 
 　トップページ 
 ********************************************************/
