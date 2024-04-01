@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_with_password(user_params)
-      bypass_sign_in(@user) 
+      bypass_sign_in(@user)
       redirect_to root_path, notice: 'Profile was successfully updated.'
     else
       render :edit, status: :unprocessable_entity

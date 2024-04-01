@@ -6,4 +6,3 @@ class User < ApplicationRecord
 
   validates :nickname, presence: { message: 'ニックネームを入力してください' }
 end
-
