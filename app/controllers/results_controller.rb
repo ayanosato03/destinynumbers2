@@ -11,14 +11,19 @@ class ResultsController < ApplicationController
   end
   
   def create
-    @result = Result.new(result_params)
+    @result =  current_user.results.build(result_params)
+    puts "Current user: #{current_user.inspect}"
+    puts "Result user: #{@result.user.inspect}"
     if @result.save
+      puts "データが保存されました"
       redirect_to '/'
     else
+      puts "データの保存に失敗しました"
+      puts @result.errors.full_messages
       render :index, status: :unprocessable_entity
     end
   end
-  
+
   def show
     @fortune_number = params[:id].to_i
 
@@ -32,7 +37,6 @@ class ResultsController < ApplicationController
 
   private
   def result_params
-    params.require(:result).permit(:name, :birthday, :calculation_result)
+    params.require(:result).permit(:name, :birthday,:calculation_result)
   end
-
 end

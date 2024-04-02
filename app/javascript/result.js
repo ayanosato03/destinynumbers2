@@ -1,12 +1,15 @@
+
 function initializePage(){
-  const birthdayYear = document.getElementById("user_birthday_1i");
-  const birthdayMonth = document.getElementById("user_birthday_2i");
-  const birthdayDay = document.getElementById("user_birthday_3i");
+  const birthdayYear = document.getElementById("result_birthday_1i");
+  const birthdayMonth = document.getElementById("result_birthday_2i");
+  const birthdayDay = document.getElementById("result_birthday_3i");
 
   const fortuneButton = document.getElementById('fortune-button'); 
   fortuneButton.addEventListener('click', function() {
+    console.log("フォームが送信されました");
 const birthdate = new Date(birthdayYear.value, birthdayMonth.value - 1, birthdayDay.value);
-  })
+console.log("誕生日:", birthdate);
+})
 
   function sumDigits(num) {
     const str = String(num);
