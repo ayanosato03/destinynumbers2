@@ -19,5 +19,33 @@
   数 秘 術 占 い<br>
   <small class="text-body-secondary">名前と生年月日を入力して下さい</small>
   </h3>
+
+<%= form_with(model: @result, local: true) do |f| %>
+  <div class="mb-3 row justify-content-center">
+    <%= f.label :name, class: 'form-label' %>
+    <%= f.text_field :name, class: 'input-short', id: 'inputName' %>
   </div>
-</div>
+
+  <div class="mb-3">
+    <%= f.label :birthday, class: 'form-label' %>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+        f.date_select(
+          :birthday,
+          class: 'select-birth form-control', 
+          id: "birthday",
+          use_month_numbers: true,
+          prompt: '--',
+          start_year: 1930,
+          end_year: (Time.now.year - 5),
+          date_separator: '%s'
+        ),
+        "<p> 年 </p>", "<p> 月 </p>"
+      ) + "<p> 日 </p>" %>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= f.submit "占う", class: 'btn-pink' %>
+  </div>
+<% end %>

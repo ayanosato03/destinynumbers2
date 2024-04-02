@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: { message: 'ニックネームを入力してください' }
+  has_many :results
 end
