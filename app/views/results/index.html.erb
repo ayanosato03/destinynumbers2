@@ -34,7 +34,7 @@
         f.date_select(
           :birthday,
           class: 'select-birth form-control', 
-          id: "birthday",
+          id: "result_birthday",
           use_month_numbers: true,
           prompt: '--',
           start_year: 1930,
@@ -47,6 +47,7 @@
   </div>
 
   <div class="text-center">
+    <input type="hidden" name="calculation_result" id="calculation_result">
     <%= f.submit "占う", class: 'btn-pink', id: "fortune-button" %>
   </div>
 <% end %>

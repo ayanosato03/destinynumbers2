@@ -12,6 +12,7 @@ class ResultsController < ApplicationController
   
   def create
     @result =  current_user.results.build(result_params)
+    calculation_result = params[:result][:calculation_result]
     puts "Current user: #{current_user.inspect}"
     puts "Result user: #{@result.user.inspect}"
     if @result.save

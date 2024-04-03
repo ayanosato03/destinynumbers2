@@ -1,82 +1,74 @@
+function getCSRFToken() {
+  const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  return token;
+}
 
-function initializePage(){
-  const birthdayYear = document.getElementById("result_birthday_1i");
-  const birthdayMonth = document.getElementById("result_birthday_2i");
-  const birthdayDay = document.getElementById("result_birthday_3i");
-
-  const fortuneButton = document.getElementById('fortune-button'); 
-  fortuneButton.addEventListener('click', function() {
-    console.log("フォームが送信されました");
-const birthdate = new Date(birthdayYear.value, birthdayMonth.value - 1, birthdayDay.value);
-console.log("誕生日:", birthdate);
-})
-
+function calculateFortuneNumber(year, month, day) {
+  // 各桁の数字を足し合わせる関数
   function sumDigits(num) {
-    const str = String(num);
-    let sum = 0;
-    for (let i = 0; i < str.length; i++) {
-      sum += Number(str.charAt(i));
-    }
-    return sum;
+    return num.toString().split('').reduce((acc, val) => acc + parseInt(val), 0);
   }
 
-  function getFortuneNumber(birthdate) {
-    const yearSum = sumDigits(birthdate.getFullYear()); // 年の数字を1桁ずつに分解して合計
-    const monthSum = sumDigits(birthdate.getMonth() + 1); // 月の数字を1桁ずつに分解して合計
-    const daySum = sumDigits(birthdate.getDate()); // 日の数字を1桁ずつに分解して合計
-  
-    const total = yearSum + monthSum + daySum;
-  
-    if (total === 11 || total === 22 || total === 33) {
-      return total;
-    } else {
-      return sumDigits(total);
-    }
-  }
+  // 年、月、日を1桁ずつに分解して足し合わせる
+  let total = sumDigits(parseInt(year)) + sumDigits(parseInt(month)) + sumDigits(parseInt(day));
 
+  // 11、22、33はそのまま運命数として扱う
+  if (total === 11 || total === 22 || total === 33) {
+    return total;
+  } else {
+    // それ以外の場合、合計を1桁ずつに分解して再度足し合わせる
+    return sumDigits(total);
+  }
+}
+
+function initializePage() {
+  const fortuneButton = document.getElementById('fortune-button');
+  
   fortuneButton.addEventListener('click', function() {
-    const birthdate = new Date(birthdayYear.value, birthdayMonth.value - 1, birthdayDay.value);
-    const fortuneNumber = getFortuneNumber(birthdate);
-    let url;
-    switch (fortuneNumber) {
-      case 1:
-        url = '/results/1';
-        break;
-      case 2:
-        url = '/results/2';
-        break;
-      case 3:
-        url = '/results/3';
-        break;
-      case 4:
-        url = '/results/4';
-        break;
-      case 5:
-        url = '/results/5';
-        break;
-      case 6:
-        url = '/results/6';
-        break;
-      case 7:
-        url = '/results/7';
-        break;
-      case 8:
-        url = '/results/8';
-        break;
-      case 9:
-        url = '/results/9';
-        break;
-      case 11:
-        url = '/results/11';
-        break;
-      case 22:
-        url = '/results/22';
-        break;
-      case 33:
-        url = '/results/33';
-        break;
+    const inputName = document.getElementById("inputName");
+    const nameValue = inputName.value;
+    console.log("inputNameの値:", nameValue);
+
+    const birthdayYear = document.getElementById("result_birthday_1i");
+    const birthdayMonth = document.getElementById("result_birthday_2i");
+    const birthdayDay = document.getElementById("result_birthday_3i");
+
+    // 生年月日の値を取得
+    const yearValue = birthdayYear.value;
+    const monthValue = birthdayMonth.value;
+    const dayValue = birthdayDay.value;
+
+        // CSRFトークンを取得
+        const csrfToken = getCSRFToken();
+
+    // 生年月日の運命数を計算
+    const fortuneNumber = calculateFortuneNumber(yearValue, monthValue, dayValue);
+    console.log("運命数:", fortuneNumber);
+
+    // フォームデータを作成
+    const formData = new FormData();
+    formData.append('name', nameValue);
+    formData.append('birthday', `${yearValue}-${monthValue}-${dayValue}`);
+    formData.append('calculation_result', fortuneNumber);
+
+    // フォームデータをサーバーに送信
+    fetch('/results', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
       }
-      window.location.href = url;
+      return response.json();
+    })
+    .then(data => {
+      // サーバーからの応答を処理
+      console.log('Form submitted successfully:', data);
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+    });
   });
 }
 
