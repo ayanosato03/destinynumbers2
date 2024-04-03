@@ -47,29 +47,38 @@ function initializePage() {
 
     // フォームデータを作成
     const formData = new FormData();
-    formData.append('name', nameValue);
-    formData.append('birthday', `${yearValue}-${monthValue}-${dayValue}`);
-    formData.append('calculation_result', fortuneNumber);
+    formData.append('result[name]', nameValue);
+    formData.append('result[birthday]', `${yearValue}-${monthValue}-${dayValue}`);
+    formData.append('result[calculation_result]', fortuneNumber);
 
-    // フォームデータをサーバーに送信
-    fetch('/results', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-      return response.json();
-    })
-    .then(data => {
-      // サーバーからの応答を処理
-      console.log('Form submitted successfully:', data);
-    })
-    .catch(error => {
-      console.error('Form submission error:', error);
-    });
-  });
+// フォームデータをサーバーに送信
+fetch('/results', {
+  method: 'POST',
+  headers: {
+    'X-CSRF-Token': csrfToken // CSRFトークンを追加
+  },
+  body: formData
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Failed to submit form');
+  }
+  return response.json();
+})
+
+.then(response => {
+  if (response.success) {
+    console.log('Form submitted successfully:', response.result);
+    // 成功時の処理を記述する
+  } else {
+    console.error('Form submission error:', response.errors);
+    // エラー時の処理を記述する
+  }
+})
+.catch(error => {
+  console.error('Form submission error:', error);
+});
+});
 }
 
 window.addEventListener('turbo:load', initializePage);
