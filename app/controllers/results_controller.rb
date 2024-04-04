@@ -21,8 +21,7 @@ class ResultsController < ApplicationController
     if @result.save
       render json: { success: true, result: @result }, status: :ok
       puts "データが保存されました"
-      puts "Received calculation_result: #{params[:calculation_result]}"
-      redirect_to '/'
+      puts "Received calculation_result: #{params[:result][:calculation_result]}"
     else
       puts "データの保存に失敗しました"
       puts @result.errors.full_messages
