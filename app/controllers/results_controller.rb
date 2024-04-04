@@ -12,12 +12,11 @@ class ResultsController < ApplicationController
   
   def create
     @result =  current_user.results.build(result_params)
-    calculation_result = params[:calculation_result].present? ? params[:calculation_result].to_i : nil
-    @result.calculation_result = calculation_result
+    @result.calculation_result = params[:result][:calculation_result]
 
     puts "Current user: #{current_user.inspect}"
     puts "Result user: #{@result.user.inspect}"
-    puts "calculation_result: #{calculation_result}" 
+    puts "calculation_result: #{@result.calculation_result}" 
 
     if @result.save
       render json: { success: true, result: @result }, status: :ok
