@@ -14,17 +14,9 @@ class ResultsController < ApplicationController
     @result =  current_user.results.build(result_params)
     @result.calculation_result = params[:result][:calculation_result]
 
-    puts "Current user: #{current_user.inspect}"
-    puts "Result user: #{@result.user.inspect}"
-    puts "calculation_result: #{@result.calculation_result}" 
-
     if @result.save
       render json: { success: true, result: @result }, status: :ok
-      puts "データが保存されました"
-      puts "Received calculation_result: #{params[:result][:calculation_result]}"
     else
-      puts "データの保存に失敗しました"
-      puts @result.errors.full_messages
       render json: { success: false, errors: @result.errors.full_messages }, status: :unprocessable_entity    
     end
   end
