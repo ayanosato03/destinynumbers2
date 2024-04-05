@@ -9,15 +9,15 @@ class ResultsController < ApplicationController
   def new
     @result = Result.new
   end
-  
+
   def create
-    @result =  current_user.results.build(result_params)
+    @result = current_user.results.build(result_params)
     @result.calculation_result = params[:result][:calculation_result]
 
     if @result.save
       render json: { success: true, result: @result }, status: :ok
     else
-      render json: { success: false, errors: @result.errors.full_messages }, status: :unprocessable_entity    
+      render json: { success: false, errors: @result.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -33,7 +33,8 @@ class ResultsController < ApplicationController
   end
 
   private
+
   def result_params
-    params.require(:result).permit(:name, :birthday,:calculation_result)
+    params.require(:result).permit(:name, :birthday, :calculation_result)
   end
 end
