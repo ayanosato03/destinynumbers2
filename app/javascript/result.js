@@ -22,8 +22,11 @@ function calculateFortuneNumber(year, month, day) {
 }
 
 function initializePage() {
-  const fortuneButton = document.getElementById('fortune-button');
-  
+    const fortuneButton = document.getElementById('fortune-button');
+    if (!fortuneButton) {
+      console.error('fortuneButton is not found');
+      return; // fortuneButtonが存在しない場合は処理を中断する
+    }
   fortuneButton.addEventListener('click', function() {
     const inputName = document.getElementById("inputName");
     const nameValue = inputName.value;
@@ -70,6 +73,10 @@ fetch('/results', {
   if (response.success) {
     console.log('Form submitted successfully:', response.result);
     // 成功時の処理を記述する
+    const calculationResult = response.result.calculation_result;
+    let url = `/results/${calculationResult}`; // 運命数に基づいてURLを生成
+    window.location.href = url;
+    console.log('fortuneButton:', fortuneButton);
   } else {
     console.error('Form submission error:', response.errors);
     // エラー時の処理を記述する
