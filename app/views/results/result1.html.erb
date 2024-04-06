@@ -1,47 +1,58 @@
-<%= render "shared/header" %>
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<div class="result-main">
-  <div class="result-title">Number 1</div>
-</div>
- <!-- 占いコンテンツ全体 -->
-<div class="result-contents">
-   <!-- 結果 -->
-    <div class="result-essence1">
-      <br>リーダーシップ、先駆性、そして行動力に溢れています。<br>
-      <div class="result-essence-main1">
-        積極的で、計画を立てなくてもやりたいと思ったときにはすでに行動が始まり、そのスピードの速さや頭の回転のよさが魅力です。<br>
-        何においても1番を目指し、負けず嫌いな一面も持っていますが、1番にこだわらずとも生まれ持った行動力によって自然とリーダーシップを発揮し、周囲を引っ張っていく傾向があります。<br>
-        ゼロから1を生み出すことに長けており、フリーランスや新しい事業や会社を興すベンチャーマインドのある創業者として成功する可能性が高いです。<br>
-        また、場を仕切り、指示を出し、決断をすることも得意で、時にはコントロールしたい欲が生まれるかもしれませんが、バランスを保つことができれば無敵です。<br>
-        たまに落ち込むことがあっても、自家発電型の名前さんはすぐに復活し、いつも元気で周囲や環境に影響されない強さを持っています。<br></div>
-    <div class="result-essence2">
-      <br>性格は裏表がなくサッパリしています。<br>
-      <div class="result-essence-main2">
-        周囲の意見に流されることなく、自分の考え方を持ち、好き嫌いもハッキリしています。<br>
-        思ったことをズバッと言う傾向があります<br>
-        裏表がない性格をしているため、他人との間に余計な駆け引きはありません。<br>
-        これにより、一緒にいても気疲れせずに済む人ともいえるでしょう。<br>
-        直情型でシンプルな性質を持ち、思っていることがわかりやすいタイプでもあります。<br>
-        元気でエネルギッシュな雰囲気を持ち合わせています。<br></div>
-    <div class="result-essence3">
-      <br>独自のオリジナリティを大切にしています。<br>
-      <div class="result-essence-main3">
-        どんな場所においても独自のオリジナリティを発揮しようとする性質があります。<br>
-        周りの人の声が聞こえないほどの集中力と道なき道を切り開いていける行動力があります。<br>
-        視点も独自のものを持っているため、本人は普通に周りと同じようにしているつもりでも、どこかズレています。<br>
-        中心となる存在なので、輪の中に入れずひとりで浮いている状態になることもあります。<br>
-        また、スピード感を重視してしまう分、せっかちとして表れがちです。<br>
-        スピードはあるものの、抜けがあったり後始末が苦手です。</div>
-    <div class="result-essence4">
-      <br>Number1と相性の良いNumberは6です。<br>
-      <div class="result-essence-main4">
-        Number6はいわゆるソウルメイトとい言える立場になります。<br>
-        良き理解者で支援者となってくれるでしょう。<br>
-        自分にないものを相手が持っているので、一緒にいるととても面白いと思えるのです。<br></div>
-        <br>
- <ul class="nav nav-underline">
+<!-- JavaScript/jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+<%= render "shared/header" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="result-main">
+        <img src="<%= asset_path 'reder' %>" class="img-fluid img-result" alt="Result Image">
+      <h1 class="display-2">数 秘 １</h1>
+      <p><strong class="strong">生まれ持った行動力で人を導くリーダー</strong></p>
+      <p class="main-text">1番の持つ本質は、リーダー、先駆者、行動力。積極的で行動力に溢れています。</p>
+      <p class="main-text">計画を立てなくともやりたいと思ったときには既にからだが動き、なぜかうまくいきます。</p>
+      <p class="main-text">そのスピードの速さや頭の回転のよさはあなたの魅力です。</p>
+      <p class="main-text"> 何においても1番が好きだったり、負けず嫌いだったり、そんな人も多いかもしれません。</p>
+      <p class="main-text"> 1番にこだわっていなくても生まれ持った行動力によって、自然とリーダーシップを取るポジションになりがちでゼロから1を生み出すことが得意な人も多いはず。</p>
+      <p class="main-text"> この数字を持っている人はフリーランス、または新しく事業や会社を興すベンチャーマインドのある創業者が多いのです。</p>
+      <p class="main-text"> また、1番は場を仕切る、指示をする、決断をすることも得意。</p>
+      <p class="main-text"> ときどきコントロールしたい欲が生まれてしまうので、そこさえバランスよく保てたら、あなたはもう無敵！たまに落ち込むことがあっても、自家発電型の1番はすぐに復活、いつも元気。</p>
+      <p class="main-text"> いい意味で、周囲や環境に影響されない強さを持っているのも魅力です。</p>
+      <br>
+       <ul class="nav nav-underline">
     <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/">Back</a></li>
+    <a class="nav-link active back-link" aria-current="page" href="/">Back</a></li>
   </ul>
+    </div>
   </div>
 </div>
+
+
+
+  <!-- 追加のスタイル -->
+  <style>
+    .display-2 {
+      color: #c17be4;
+      padding-bottom: 10px;
+    }
+    .strong {
+      color: #330033;
+      font-size: 24px;
+    }
+    .main-text {
+      color: #330033;
+      font-size: 20px;
+    }
+    .back-link{
+      color: #c17be4;
+    }
+
+  </style>
+<!-- JavaScript/jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
