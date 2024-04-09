@@ -88,5 +88,14 @@ fetch('/results', {
 });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const fortuneButton = document.getElementById('fortune-button');
+  if (fortuneButton) {
+    fortuneButton.addEventListener('click', function() {
+      window.location.href = '/users/sign_in'; 
+    });
+  }
+});
+
 window.addEventListener('turbo:load', initializePage);
 window.addEventListener('turbo:render', initializePage);
