@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    redirect_to root_path, alert: 'ログインしてください' unless @user
   end
 
   def update
@@ -14,6 +15,13 @@ class UsersController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def show
+  @user = User.find(params[:id])
+  @results = @user.results 
+  @nickname = @user.nickname 
+ end
+
 
   private
 

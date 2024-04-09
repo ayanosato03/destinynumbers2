@@ -1,0 +1,53 @@
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- JavaScript/jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+<%= render "shared/header" %>
+<div class="contents row">
+  <p class="mb-4 display-5"><%= @nickname %>さんの占い一覧</p>
+  <% @results.each do |result| %>
+    <div class="content_post card mb-4">
+      <div class="card-body">
+        <h5 class="card-title"><%= result.calculation_result %></h5>
+        <p class="card-text"><span class="name"><%= result.name %></span></p>
+      </div>
+    </div>
+  <% end %>
+    <div class="contents row">
+     <%= link_to "登録情報変更", edit_user_registration_path(current_user), class: "display-6 edit-link" %>
+    </div>
+</div>
+
+<!-- 追加のスタイル -->
+<style>
+ .contents.row {
+  font-family: "IM Fell French Canon SC", serif;
+  padding: 50px;
+ 
+ }
+.display-5{
+  color: #c17be4;
+  
+}
+
+ .contents.row .card-body {
+color: #330033;
+
+}
+
+.edit-link{
+color: #c17be4;
+}
+
+
+
+  </style>
+
+
+<!-- JavaScript/jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
