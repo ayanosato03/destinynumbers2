@@ -8,6 +8,7 @@
 
 <%= render "shared/header" %>
 <div class="contents row">
+  <% if @results.present? %>
   <p class="mb-4 display-5"><%= @nickname %>さんの占い一覧</p>
   <% @results.each do |result| %>
     <div class="content_post card mb-4">
@@ -17,8 +18,11 @@
       </div>
     </div>
   <% end %>
-    <div class="contents row">
-     <%= link_to "登録情報変更", edit_user_registration_path(current_user), class: "display-6 edit-link" %>
+  <% else %>
+    <p>占い結果がありません。</p>
+  <% end %>
+      <div class="contents row">
+     <%= link_to "登録情報変更", edit_user_registration_path, class: "display-6 edit-link" %>
     </div>
 </div>
 
