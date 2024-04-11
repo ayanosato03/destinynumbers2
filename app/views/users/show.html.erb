@@ -7,7 +7,13 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 
 <%= render "shared/header" %>
+
 <div class="contents row">
+  <div class="col-md-12 mb-4">
+ <%= link_to "登録情報変更", edit_user_registration_path, class: "display-6 edit-link" %>
+</div>
+
+<div class="col-md-12">
   <% if @results.present? %>
   <p class="mb-4 display-5"><%= @nickname %>さんの占い一覧</p>
   <% @results.each do |result| %>
@@ -21,9 +27,7 @@
   <% else %>
     <p>占い結果がありません。</p>
   <% end %>
-      <div class="contents row">
-     <%= link_to "登録情報変更", edit_user_registration_path, class: "display-6 edit-link" %>
-    </div>
+  </div>
 </div>
 
 <!-- 追加のスタイル -->
@@ -46,7 +50,6 @@ color: #330033;
 .edit-link{
 color: #c17be4;
 }
-
 
 
   </style>
