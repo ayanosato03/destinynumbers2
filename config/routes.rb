@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :users, only: [:show]
   devise_for :users
   get 'results/index'
   root to: "results#index"
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:show, :edit, :update]
   get '/result1', to: 'results#result1', as: 'result1'
   resources :results, only: [:index, :create, :show]
   get '/calculation_results', to: redirect('/')  # リダイレクトルーティング
+
 end
