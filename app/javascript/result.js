@@ -88,8 +88,6 @@ fetch('/results', {
 });
 }
 
-initializePage();
-
 document.addEventListener('DOMContentLoaded', function() {
   const fortuneButton = document.getElementById('fortune-button');
   if (fortuneButton) {

@@ -1,6 +1,5 @@
 class ResultsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :move_to_index, except: [:index, :show]
 
   def index
     @results = Result.all
