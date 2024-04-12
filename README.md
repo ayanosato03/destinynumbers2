@@ -5,7 +5,7 @@ destinynumbers2
 数秘術占いができ結果を見ることができます。
 
 ## URL
-https://destinynumbers2.onrender.com/
+https://destinynumbers2.onrender.com
 
 ## テスト用アカウント
 
