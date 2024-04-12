@@ -5,7 +5,7 @@ destinynumbers2
 数秘術占いができ結果を見ることができます。
 
 ## URL
-https://destinynumbers.onrender.com
+https://destinynumbers2.onrender.com/
 
 ## テスト用アカウント
 
@@ -13,11 +13,11 @@ Basic認証パスワード：admin
 
 Basic認証ID：2222
 
-ニックネーム：
+ニックネーム：テスト
 
-メールアドレス：
+メールアドレス：test0000@mail.com
 
-パスワード：
+パスワード：A11111
 
 ## 利用方法
 1.トップページのヘッダーからユーザー新規登登録を行う
@@ -28,7 +28,7 @@ Basic認証ID：2222
 
 4.占うボタンをクリックする
 
-[![Image from Gyazo](https://i.gyazo.com/a3e494674d437b1899c89eb50b4378cb.gif)](https://gyazo.com/a3e494674d437b1899c89eb50b4378cb)
+[![Image from Gyazo](https://i.gyazo.com/bb5b00513bbe5a6271a179dd31da0398.gif)](https://gyazo.com/bb5b00513bbe5a6271a179dd31da0398)
 
 ## 機能一覧
 数秘術占い機能
