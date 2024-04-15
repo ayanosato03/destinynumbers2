@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  skip_before_action :verify_authenticity_token, only: [:javascript_response]
+  before_action :authenticate_user!, except: [:index,:javascript_response]
 
   def index
     @results = Result.all
@@ -15,10 +16,12 @@ class ResultsController < ApplicationController
     @result.calculation_result = params[:result][:calculation_result]
 
     if @result.save
-      render json: { success: true, result: @result }, status: :ok
+      render json: { success: true, result: @result, calculation_result: @result.calculation_result }, status: :ok      
       puts "データが保存されました"
       puts "Received calculation_result: #{params[:calculation_result]}"
     else
+      puts "データの保存に失敗しました"
+      puts @result.errors.full_messages
       render json: { success: false, errors: @result.errors.full_messages }, status: :unprocessable_entity
     end
   end
@@ -33,6 +36,14 @@ class ResultsController < ApplicationController
     end
  
     render template: "results/result#{@fortune_number}"
+  end
+
+  def javascript_response
+    # result.jsファイルを直接レスポンスとして返す
+    respond_to do |format|
+      format.js { render file: Rails.root.join('app', 'javascript', 'result.js'), content_type: 'text/javascript' }
+  
+    end
   end
 
   private

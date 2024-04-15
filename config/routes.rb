@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/result1', to: 'results#result1', as: 'result1'
   resources :results, only: [:index, :create, :show]
   get '/calculation_results', to: redirect('/')  # リダイレクトルーティング
-
+  get '/result.js', to: 'results#javascript_response'
 end
