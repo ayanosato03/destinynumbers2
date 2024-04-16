@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :results, only: [:index, :create, :show]
   get '/calculation_results', to: redirect('/')  # リダイレクトルーティング
   get '/result.js', to: 'results#javascript_response'
+  resources :life_pass_numbers, only:  [:index, ]
 end
