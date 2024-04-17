@@ -1,3 +1,79 @@
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- JavaScript/jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<%= render 'shared/header' %>
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+
+<div class="index-main">
+  <div class="hero my-img d-flex align-items-center justify-content-center text-center" style="background: url(<%= asset_path 'fuji' %>) no-repeat center center; background-size: cover;">
+  </div>
+ <div class="container text-center">
+ <h3 class="my-title">Explanation</h3>
+ </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 mb-4">
+     <%= link_to result_path(1) do %>  
+     <img src="<%= asset_path 'reder.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(2) do %>
+      <img src="<%= asset_path 'kyokan.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(3) do %>
+      <img src="<%= asset_path 'smile.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(4) do %>
+      <img src="<%= asset_path 'ru-ru.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(5) do %>
+      <img src="<%= asset_path 'boken.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(6) do %>
+      <img src="<%= asset_path 'doll.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(7) do %>
+      <img src="<%= asset_path 'cool.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(8) do %>
+      <img src="<%= asset_path 'tomi.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(9) do %>
+      <img src="<%= asset_path 'satori.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(11) do %>
+      <img src="<%= asset_path 'tenshi.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(22) do %>
+      <img src="<%= asset_path 'futago.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+    <div class="col-md-3 mb-4">
+      <%= link_to result_path(33) do %>
+      <img src="<%= asset_path 'iruka.jpg' %>" class="img-fluid img-result" alt="Result Image" style="width: 100%; height: 150px;">
+    </div><% end %>
+  </div>
+
+
+
 http://localhost:3000/life_pass_numbers
 
-各ナンバーについて
+
+
