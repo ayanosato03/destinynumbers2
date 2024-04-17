@@ -21,27 +21,46 @@ function calculateFortuneNumber(year, month, day) {
   }
 }
 
-function initializePage() {
-    const fortuneButton = document.getElementById('fortune-button');
-    if (!fortuneButton) {
-      console.error('fortuneButton is not found');
-      return; // fortuneButtonが存在しない場合は処理を中断する
-    }
-
-      // 既存のイベントリスナーを削除
-  fortuneButton.removeEventListener('click', handleClick);
-
-  // 新しいイベントリスナーを追加
-  fortuneButton.addEventListener('click', handleClick);
+// ログインページにリダイレクトする関数
+function redirectToLogin() {
+  window.location.href = '/users/sign_in';
 }
 
-function handleClick(event) {
-  event.preventDefault(); // デフォルトのイベントをキャンセル
+function initializePage() {
+  const fortuneButton = document.getElementById('fortune-button');
+  console.log('イベント発火');
+  if (!fortuneButton) {
+    console.error('fortuneButton is not found');
+    return; // fortuneButtonが存在しない場合は処理を中断する
+  }
 
+  // ボタンをクリックした時の処理
+  fortuneButton.addEventListener('click', function() {
+    // ログインチェック
+    const loggedIn = isLoggedIn();
+    // ログインしていない場合はログインページにリダイレクト
+    if (!loggedIn) {
+      redirectToLogin();
+      return; // ログインしていない場合は以降の処理をスキップ
+    }
+
+    // ログインしている場合はフォーチュンの計算を行う
+    calculateFortune();
+
+    // ボタンがクリックされたことをログに出力
+    console.log('Fortune button clicked');
+  });
+
+  // ログインしているかどうかをチェックする関数
+  function isLoggedIn() {
+  // ここにログインチェックのロジックを追加する
+  // セッションストレージにログイン情報が保存されているかを確認する
+    return sessionStorage.getItem('isLoggedIn') === true;
+  }
+  // フォーチュンを計算する関数
+  function calculateFortune() {
     const inputName = document.getElementById("inputName");
     const nameValue = inputName.value;
-    console.log("inputNameの値:", nameValue);
-
 
     const birthdayYear = document.getElementById("result_birthday_1i");
     const birthdayMonth = document.getElementById("result_birthday_2i");
@@ -52,8 +71,8 @@ function handleClick(event) {
     const monthValue = birthdayMonth.value;
     const dayValue = birthdayDay.value;
 
-        // CSRFトークンを取得
-        const csrfToken = getCSRFToken();
+    // CSRFトークンを取得
+    const csrfToken = getCSRFToken();
 
     // 生年月日の運命数を計算
     const fortuneNumber = calculateFortuneNumber(yearValue, monthValue, dayValue);
@@ -65,47 +84,38 @@ function handleClick(event) {
     formData.append('result[birthday]', `${yearValue}-${monthValue}-${dayValue}`);
     formData.append('result[calculation_result]', fortuneNumber);
 
-// フォームデータをサーバーに送信
-fetch('/results', {
-  method: 'POST',
-  headers: {
-    'X-CSRF-Token': csrfToken // CSRFトークンを追加
-  },
-  body: formData
-})
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Failed to submit form');
-  }
-  return response.json();
-})
-
-.then(response => {
-  if (response.success) {
-    console.log('Form submitted successfully:', response.result);
-    // 成功時の処理を記述する
-    const calculationResult = response.result.calculation_result;
-    let url = `/results/${calculationResult}`; // 運命数に基づいてURLを生成
-    window.location.href = url;
-    console.log('fortuneButton:', fortuneButton);
-  } else {
-    console.error('Form submission error:', response.errors);
-    // エラー時の処理を記述する
-  }
-})
-.catch(error => {
-  console.error('Form submission error:', error);
-});
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  const fortuneButton = document.getElementById('fortune-button');
-  if (fortuneButton) {
-    fortuneButton.addEventListener('click', function() {
-      window.location.href = '/users/sign_in'; 
+    // フォームデータをサーバーに送信
+    fetch('/results', {
+      method: 'POST',
+      headers: {
+        'X-CSRF-Token': csrfToken // CSRFトークンを追加
+      },
+      body: formDat
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+      return response.json();
+    })
+    .then(response => {
+      if (response.success) {
+        console.log('Form submitted successfully:', response.result);
+        // 成功時の処理を記述する
+        const calculationResult = response.result.calculation_result;
+        let url = `/results/${calculationResult}`; // 運命数に基づいてURLを生成
+        window.location.href = url;
+        console.log('fortuneButton:', fortuneButton);
+      } else {
+        console.error('Form submission error:', response.errors);
+        // エラー時の処理を記述する
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
     });
+   }
   }
-});
 
 window.addEventListener('turbo:load', initializePage);
 window.addEventListener('turbo:render', initializePage);
