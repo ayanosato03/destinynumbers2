@@ -67,9 +67,9 @@ function handleClick(event) {
   );
 }
 
-// 要検討です
+// 要検討
 function isLoggedIn() {
-  return true;
+  return typeof window.isLoggedIn !== 'undefined' && window.isLoggedIn;
 }
 
 function redirectToLogin() {

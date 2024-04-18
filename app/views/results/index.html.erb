@@ -45,12 +45,18 @@
       ) + "<p> 日 </p>" %>
     </div>
   </div>
-
+<%= javascript_tag do %>
+  window.isLoggedIn = <%= user_signed_in? %>;
+<% end %>
   <div class="text-center">
     <input type="hidden" name="calculation_result" id="calculation_result">
     <input type="button" value="占う" class="btn-pink" id="fortune-button">
   </div>
-
+<%= javascript_tag do %>
+  function isLoggedIn() {
+    return <%= user_signed_in? %>;
+  }
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-md-3 mb-4">
