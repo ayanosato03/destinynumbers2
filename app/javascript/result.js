@@ -17,10 +17,12 @@ function calculateFortuneNumber(year, month, day) {
     sumDigits(parseInt(year)) +
     sumDigits(parseInt(month)) +
     sumDigits(parseInt(day));
-  // 11、22、33はそのまま運命数として扱う、それ以外の場合、合計を1桁ずつに分解して再度足し合わせる
-  if (total !== 11 && total !== 22 && total !== 33) {
-    total = sumDigits(total);
+  // 11、22、33はそのまま運命数として扱う
+  if (total === 11 || total === 22 || total === 33) {
+    console.log("Fortune number:", total); // 計算された占い結果をコンソールに出力
+    return total;
   }
+
   // それ以外の場合、合計を1桁ずつに分解して再度足し合わせる
   while (total >= 10) {
     total = sumDigits(total);
