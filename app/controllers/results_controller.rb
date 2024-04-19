@@ -17,7 +17,11 @@ class ResultsController < ApplicationController
 
     if @result.save
       render json: { success: true, result: @result, calculation_result: @result.calculation_result }, status: :ok
+      puts 'データが保存されました'
+      puts "Received calculation_result: #{params[:calculation_result]}"
     else
+      puts 'データの保存に失敗しました'
+      puts @result.errors.full_messages
       render json: { success: false, errors: @result.errors.full_messages }, status: :unprocessable_entity
     end
   end
