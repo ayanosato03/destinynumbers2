@@ -8,14 +8,14 @@
 <%= render 'shared/header' %>
  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 
-<div class="accordion" id="accordionPanelsStayOpenExample">
+<div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"> 
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
       数秘1の性格
       </button>
       </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div class="accordion-body">
       <strong>数秘1は裏表なくサッパリしています。</strong>
     <br>
@@ -48,28 +48,135 @@
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         数秘1の生きづらいところ
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
      <div class="accordion-body">
       <strong>人の話が聞こえづらい。</strong> 
     <br>
     数秘1は集中力が高すぎるので、何か考えていたり取り掛かっていたりする時は人の話が耳に入りません。音として入ってはいるけれど届かない、と言った方が近いかもしれません。<br>
+    <br>
     何度も注意されても聞こえていなかったり、制止されてもなかなか止まれない、と言うことがよく起こります。
     <br><br>
      <strong>人と同じことができない</strong>
      <br>
     数秘1はどんな場所においても独自のオリジナリティを発揮しようとする性質があります。視点も独自のものを持っているため、本人は普通に周りと同じようにしているつもりでも、どこかズレていたり斜め上だったり。<br>
+    <br>
     中心となる存在なので、輪の中に入れずひとりで浮いている状態になることもあります。
       </div>
     </div>
   </div>
-
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        数秘1の短所・苦手なものは？
+      </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-      <div class="accordion-body">
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>せっかち・おっちょこちょい</strong> 
+    <br>
+    数秘1はスピード感を重視してしまう分、せっかちとして表れがちです。スピードはあるものの、抜けがあったり後始末が苦手です。
+    <br><br>
+      <strong>複雑なものが苦手</strong>
+     <br>
+    数秘1は一度にひとつのことに集中したいので、同時にいくつかを並行するのは苦手。複雑な手順は理解や切り替えが追いつかないこともあります。
+    中心となる存在なので、輪の中に入れずひとりで浮いている状態になることもあります。
+      </div>
+    </div>
+  </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        数秘1のNGワード
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>わがまま言わないで！</strong> 
+    <br>
+    数秘1は自分の意思をはっきり持ち主張する性質があります。それは自分自身をしっかり持っている良い面ですが、全力ストレートな表現が強すぎて受け取られることがあります。
+    <br>
+    また思ったことは、それまでの流れを絶ってでもすぐ行動に移したり言葉にしたくなってしまうので、わがままだと言われてしまう事も。
+    <br>
+    <br>
+      <strong>もっと慎重に・手加減して！</strong>
+     <br>
+    数秘1は一度にひとつのことに集中したいので、同時にいくつかを並行するのは苦手。複雑な手順は理解や切り替えが追いつかないこともあります。
+    中心となる存在なので、輪の中に入れずひとりで浮いている状態になることもあります。
+      </div>
+    </div>
+  </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+        数秘1の人が生きやすくなるポイント
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>直感を信じる</strong> 
+    <br>
+    数秘1は自分が「こうだ！」と感じることを信じること、選択することが一番うまくいった、と感じます。
+    <br>
+    たとえ世の中が「正解だ」「これが最善である」と言うことであっても、ピンと来ないことは選ばなくていいのです。それを周りの意見に流されて選んでしまうと、たとえうまくいったとしても大きな後悔や違和感が残るでしょう。
+    <br>
+    行き先はよくわかっていないけどなんとなくこっち！で走り始める時もあります。そんなときは暗闇の中を走っている心細い感覚になりますが、光は必ず見えてきます。自分の感覚に嘘をつかず、そちらに走り続けてみてください。
+    <br>
+    <br>
+      <strong>自分で自分を褒める</strong>
+     <br>
+    数秘1は自分で自分を信じる、褒めることを必要とするために、逆に自信を持ちづらいところがあります。
+    <br>
+    自信が持てないとき、他人からの承認を求めようとしてしまいますが、自分で自分を信じられなければ穴の空いたバケツ状態。どんな時でも、小さいことでもまずは自分で自分を褒めてあげてください。
+      </div>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseFour">
+        数秘1の長所・得意なところは？
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>こう！と決めたら周りは気にせず突き抜けていく</strong> 
+    <br>
+    数秘1はこう！と決めた事に一心不乱にまっすぐ突き進んでいく意志の強さがあります。周りの声が聞こえないほどの集中力と突貫力があるからこそ、まだ前例の無いことや道なき道も切り拓いていけるのです。
+    <br>
+    <br>
+      <strong>人の良いところやその人ならではのところを見つける</strong>
+     <br>
+    数秘1は目の前の人の良いところやその人ならではのオリジナリティを見つけるのが得意です。褒め上手とも言えます。<br>
+    ＝自分には無い…という形で出る事もありますが、そんな時は素直に悔しい！と言ってみましょう
+    <br>
+    まだ世の中に価値が見出されていないものに目をつける事も。良いな！と思ったものは分かり合える人が少なかったり、3〜10年後に流行って、その頃には興味がなくなっている事もあります。
+      </div>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+        数秘1が好むこと
+      </button>
+    </h2>
+    <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>スピード感</strong> 
+    <br>
+    数秘1はパッと決まったり、早く！ささっと！さくっと終わることを好みます。<br>
+    素早くどんどんこなして行きたい、疾走感を求めてしまうのです。
+    <br>
+    <br>
+      <strong>オリジナリティ</strong>
+     <br>
+    世に出たばかりの新しいもの、他に無いもの、1つだけのもの、個性が際立っているものなど、オリジナリティを感じるものを好みます。<br>
+    流行していたり、みんなが良い！って言っているものはいいと思っていても気持ちが冷めてしまう事も。
+      </div>
+    </div>
+  </div>
 
 
 
