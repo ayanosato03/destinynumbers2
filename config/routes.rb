@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   get '/result.js', to: 'results#javascript_response'
   resources :life_pass_numbers, only: [:index] do
    collection do
-    get :numbers1
+    (1..9).each do |n|
+      get "numbers#{n}"
+    end
+    [11, 22, 33].each do |n|
+      get "numbers#{n}"
+    end
     end
   end
 end
