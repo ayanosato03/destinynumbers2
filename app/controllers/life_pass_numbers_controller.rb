@@ -5,6 +5,4 @@ class LifePassNumbersController < ApplicationController
   def show
     @number = LifePassNumber.find(params[:id])
   end
-
 end
-
