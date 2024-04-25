@@ -1,0 +1,295 @@
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- JavaScript/jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<%= render 'shared/header' %>
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+<div class="index-main">
+  <div class="hero my-img d-flex align-items-center justify-content-center text-center" style="background: url(<%= asset_path 'fuji' %>) no-repeat center center; background-size: cover;">
+  </div>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
+      数秘5の性格
+      </button>
+      </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <strong>数秘5は色んな体験や学びが気になる好奇心旺盛なタイプ
+      </strong>
+    <br>
+    <br>知らないことに興味を持ち、常に色んなところから情報収集をしています。
+    <br>自分の体験したこと、見たものだけが真実と捉えるタイプです。
+    <br>ただ変化していきたいと言う気持ちが強いために、じっとしていたり同じことを繰り返す、同じ環境に居続けることが苦手なところがあります。
+   <br>同じところにいたいけれど転勤や転職が続く、と言った外部的要因に現れる人もいます。
+   <br>フットワークが軽いので社交的な人も多いです。
+   <br>会話はディスカッション式をとり、受け取ったものをより良くしたり意訳して返すので話が広がりやすいところも社交性に一役買っています。
+   <br>
+   <br>
+    頭の回転が早く、身に付けた知識や経験をアレンジして使ったり、わかりやすい例え話にして伝えてくれたりします。
+   <br>頭の回転の良さを発揮するために複数のことを同時進行したり、トラブルに日常的に臨機応変に対応することも多いため、周りからは要領が良く器用に見えていることが多いです。
+   <br>なぜか人よりトラブルに逢いやすく、常にリスクを考えてしまう危機管理能力の高さもあるので、最悪の状況をシミュレーションしてぐるぐる考えて動けなくなることも。
+   <br>スマートに良いところだけ見せたい、カッコ悪いところは見せたくない…と言う一面が慎重さに拍車をかけます。
+   <br>だけど、考えすぎて考えてもしょうがない！と思い切り、時に周りが驚くような勇気のいる行動を取ることもあります。
+   <br>
+   <br>
+   本人は飛び込みたいわけではないのだけれど。
+   <br>自分の興味あることにとても素直で、最優先事項。
+   <br>言われたことがそのままできなかったり、色んなことを組み合わせてアレンジしていくので周りと協調したチームプレイよりも自由にやれるソロプレイを好む気質です。
+   <br>それゆえにドライに見られたりわがままに見られてしまうこともあります。
+   <br>ですが、エンターテナー気質で演出を考えたりするのは好きなので、楽しいことを企画し場を提供することも。
+   <br>流行には良く目を向けており、取り込むのも上手。周りとほんの一味違うけれど逸脱しすぎないセンスの良さを見せます。
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        数秘5の生きづらいところ
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>リスクを考えるときは常に最悪のパターンまで考えてしまう</strong> 
+    <br>数秘5は危機管理能力が高いのでリスクや最悪の状況になることを考えているのですが
+    <br>周りから見ると「そこまでのことはよっぽどのことがないと起こらないよ？」というレベルまで考えてしまい、動けないことが多いです。
+    <br>それはたくさん考えられる思考力の高さゆえでもあるのですが、数秘5は他の数秘の人が経験しないようなトラブルに見舞われてしまうことが多いことも挙げられるでしょう。
+    <br>
+    <br>
+     <strong>飽きっぽい</strong>
+     <br>数秘5は（興味のあるジャンルには）知的好奇心が旺盛。
+    <br>好奇心が旺盛すぎて色んな体験を求めてしまいます。
+    <br>そのため、大枠や大体がわかってしまえば他のものが気になり始めてしまって、仕事も次々と変わってしまったり、習い事を始めてもすぐに別のものに興味を持ってしまいます。
+    <br>成長欲・変化欲を持っているので、同じことでも「次はこうしたらもっとスムーズに行けるかな？」ということを考えてしまいます。
+    <br>
+    <br>
+    <br>そのため、マニュアルそのままをやる、言われたことをそのままやるということが苦手です。
+    <br>大体わかったことに興味が無くなるタイプなので、同じことをやったりマンネリになることも苦手です。
+    <br>その結果周りに飽きっぽいと言われることが多くなり、本人も気にしていることが多いです。
+    <br>また、何かを待つことから在籍することまで、同じところに変化なくずっと居ることも苦手です。
+      </div>
+    </div>
+  </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        数秘5の短所・苦手なものは？
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>興味の無いものは完全スルー</strong> 
+    <br>数秘5は自分の興味があるか無いかにとても正直です。
+    <br>5の知的好奇心は知らないことに対して働きますが、それも自分の興味のあるジャンル内の話。
+    <br>自分の興味が無いものにはかなりドライな一面を見せます。
+    <br>
+    <br>
+      <strong>努力を見せることが苦手</strong> 
+    <br>常に自分をカッコ良く見せていたい数秘5。
+    <br>カッコ良く見せるための努力は惜しみたくないのですが、周りに努力していたり、泥臭い自分を見せたがらないところがあります。
+    <br>隠れて努力できる環境なら良いのですが、そうでない場合へそは曲げるのに努力しない…ということが起こったりします。
+    <br>なぜ努力を見せたがらないのかは、1つは何もしていなくてもそつなくできているように演出したいという気持ちがあります。
+    <br>
+    <br>
+    <br>もう1つは、数秘5はかなり繊細なハートの持ち主でもあり、できない・カッコ悪い自分を見られて馬鹿にされるのは立ち直れないくらいショックを受けることからの防衛本能でもあるのです。（そうは見せないことが多いですが）
+      </div>
+    </div>
+  </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        数秘5のNGワード
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>で、結論は？</strong> 
+    <br>数秘5は知識が豊富だったり、話しながらも頭がくるくると回転していき、整理されたり新しいことを閃きます。
+    <br>そのため、ついつい話が枝分かれしていってしまったり、話が変わっていってしまって、オチが見えなくなることがあります。
+    <br>数秘5にとってはそのプロセスが何よりも大事なので、結論だけ言って欲しいと言われるとしゅん…としてしまいます。
+    <br>
+    <br>
+      <strong>話してるときに口を挟まれる</strong>
+     <br>ワードではなくアクションですが、数秘5は話し始めたところや話が盛り上がっているところで口を挟まれたり割り込まれることがかなり苦手。
+    <br>思考の回転が無理に止められてしまう状況でもあり、自分に注目が向いているのを折られる状況でもあるからです。
+      </div>
+    </div>
+  </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+        数秘5の人が生きやすくなるポイント
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>広く浅くで良い</strong> 
+    <br>数秘5は色んなことに興味を持ちます。
+    <br>1度の人生で1つのことを深く追求してしまうと、その分体験できることが減ってしまいます。
+    <br>数秘5はそれよりも広く浅く体験していくことを求めていくのです。
+    <br>また、誰かが「●●についてざっくり聞きたい」と思う時、数秘5の広く浅い知識は最適。
+    <br>要点と大枠を掴むのが上手いので、かいつまんで聞きたい時にとてもありがたい存在なのです。
+    <br>
+    <br>
+      <strong>スリルを恐れない</strong>
+     <br>リスクや最悪の状況を想定してしまう数秘5はついつい慎重になってしまいがち。
+    <br>ですが、安全で変化の少ない状況にいるとなぜか退屈になってきてしまい、意図しないところでスリルを味わうことになったり、一時の刺激に依存したりと帳尻を合わせる流れになってしまいます。
+    <br>時にはあえて勇気を出し、怖いと逃げ出してしまいそうなことを飛び越えてみることも必要です。そんなあなたに勇気をもらえた！と言ってくれる人が増えてきます。
+      </div>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseFour">
+        数秘5の長所・得意なところは？
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>アレンジ(応用)力</strong> 
+    <br>数秘5は広く浅くでも色んな経験や体験、たくさんの情報という素材を持っています。
+    <br>新しい世界に飛び込んでも色んな体験や情報のベースをアレンジして理解が早い要領の良さを持っています。
+    <br>また、それらを組み合わせて短所を補いつつ目新しいものを生み出すことが得意です。
+    <br>自分の持っている経験や情報を人にシェアするときも、相手の知っていたり興味を持っている他の情報を例え話にアレンジして、わかりやすく楽しくおすすめする力があります。
+    <br>
+    <br>
+      <strong>言語化能力</strong> 
+    <br>数秘5はたくさん考えて頭の回転が早いことや情報収集力に長けている分、言葉のストックも人より多いです。
+    <br>人により喋る方が得意な人と、書く方が得意な人に分かれるようですが、考えていることを言葉にしていくことが得意。
+    <br>軽くて抽象的な雰囲気もありますが、その分多くの人に響くエンターテナー性があります。
+      </div>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+        数秘5が好むこと
+      </button>
+    </h2>
+    <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>自由・好きにできること</strong> 
+    <br>「こうしたらいいんじゃない？」と常に変化を求めて、アレンジを効かせようとしてしまう数秘5。
+    <br>ＡかＢか、と聞かれたらCやDの選択肢を作り出せる自由な環境を好みます。
+    <br>
+    <br>
+      <strong>スマートに見せること・エンターテナー的演出</strong> 
+    <br>自分をカッコ良く、スマートに見せていたい繊細な数秘5。
+    <br>高い思考力はどう立ち回ればボロが出ないか、自分をスマートに見せられるかという方向にもよく回ります。自分の見た目にも気を使う人が多いです。
+    <br>演出やタイミングにこだわり、周りの空気をよく読もうとします。
+      </div>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseFour">
+        数秘5の才能を生かすには？
+      </button>
+    </h2>
+    <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>常に変化していく</strong> 
+    <br>数秘5は常に変化をしようとし、成長したり挑戦しようとします。
+    <br>常に改善したり変化をしようとしたりすることや、次々色んなことに興味を持つ自分にOKを出しましょう。
+    <br>同じことができない、飽きっぽくても良いのです。
+    <br>仕事などでどうしても同じことをやらなければならない環境にある場合は、通り道を変えてみたり、日常の小さいことに変化をつけてみてください。
+    <br>
+    <br>
+      <strong>五感を使う</strong>
+     <br>数秘5は触覚、味覚、嗅覚、視覚、聴覚の五感が優れています。
+     <br>スムーズにいかない、ネガティブな考えばかりぐるぐるしてしまう…そんな時は五感を使ってみることを意識してみてください。
+     <br>考えをまとめる時も、誰かに話しながらの方が聴覚や相手の反応を見る視覚を使うことになり、まとまっていきやすいです。
+     <br>また擬似体験も体験の一つですが、五感を想像しながら擬似体験を行うとより体験が深まります。
+      </div>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseFour">
+        数秘5と相性のいい数字は？
+      </button>
+    </h2>
+    <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>数秘1</strong> 
+    <br>お互い興味のある方向にしか行けないタイプ。
+    <br>これ！と思った方向に合致するともっと良くするには？と勢いがつき、フットワークも軽いので良いコンビになれます。
+    <br>会話はお互い話したいことを話すのでキャッチボールにならないのはあまり気になりません。
+    <br>ただ、片方ばかり話すようになるとバランスが崩れるので注意が必要です。
+    <br>
+    <br>
+      <strong>数秘3</strong>
+    <br>数秘3は話に対してわかりやすい相槌を打ってくれます。
+    <br>お互い楽しいことが大好きなので、とにかく楽しい時間を過ごせる相手です。
+    <br>真剣な雰囲気が苦手なのも共通しているので、軽いノリでいられるのも楽なところ。
+    <br>ただ、仕事の付き合いや真剣さが必要なところではそれが裏目に出てしまうので、違う数秘を持つ人のサポートが必要になるでしょう。
+      </div>
+    </div>
+  </div>
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseFour">
+        数秘5が付き合い方に工夫が必要な数字は？
+      </button>
+    </h2>
+    <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     <div class="accordion-body">
+      <strong>数秘4</strong> 
+    <br>どんどん変化していくことを求め、軽快でありたい数秘5に対して
+    <br>1つのことをコツコツ積み重ねていき、堅実でなるべく変化したく無い数秘4は何かとぶつかりやすい相手です。
+    <br>休みの日の過ごし方も、ここでは無いどこかへ行きたい数秘5と
+    <br>お家大好き、できればお昼寝をたっぷり取りたい数秘4…と真逆の過ごし方を好みます。
+    <br>違う宇宙の住人、くらいの気持ちでいる方が楽かも。
+    <br>
+    <br>
+      <strong>数秘9</strong>
+    <br>数秘9はリアクションが薄く、掴みどころの無い感じが数秘5にはとてもやりにくい相手だと感じます。
+    <br>挑戦したい、こう変化したいと伝えると「いいんじゃない？」と言ってはくれますが、その日生きていられればOKな数秘9のテンションと数秘5の冒険心にどうにも噛み合わせが悪い感覚があります。
+    <br>状況によっては9が断れず引き受けたことを丸投げされて尻拭いをする羽目になることもあります。
+    <br>見せたく無い部分も見透かされている感覚も苦手に感じるところです。
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+  <ul class="nav nav-underline">
+    <li class="nav-item">
+    <a class="nav-link active back-link" aria-current="page" href="/">Back</a></li>
+  </ul>
+
+
+
+  <!-- 追加のスタイル -->
+  <style>
+body {
+  font-family: "IM Fell French Canon SC", serif;
+  font-style: normal;
+  color: #330033;
+  font-size: 24px;
+}
+
+.accordion-item,
+.accordion-button,
+.accordion-header,
+.accordion-body {
+  font-family: "IM Fell French Canon SC", serif;
+  font-style: normal;
+  color: #330033;
+  font-size: 24px;
+}
+
+.nav-link {
+  color: #c17be4;
+}
+
+
+
+  </style>
+<!-- JavaScript/jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
